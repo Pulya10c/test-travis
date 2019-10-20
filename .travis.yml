@@ -13,19 +13,22 @@ jobs:
       script: npm run lint
     - script: npm run test-headless
       name: "Unit Tests"
-    - stage: "Quality gates Unit Tests"
-    - script: npm run test-headless
-      name: "Unit Tests"
 branches:
   only:
   - master
 before_deploy:
-  - npm run deploy-gh
+stages:
+  - "Deploy"
+jobs:
+  include:
+    - stage: "Deploy"
+      name: "Deploy on gh-pages"
+      script: npm run deploy-gh
 deploy:
   provider: pages
   skip_cleanup: true
   keep-history: true
-  github_token: $GITHUB_TOKEN
+  github_token: GITHUB_TOKEN
   local_dir: dist/bitbucket
   on:
     branch: master
