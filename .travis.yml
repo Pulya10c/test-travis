@@ -21,7 +21,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   keep-history: true
-  github_token: GITHUB_TOKEN
+  github_token: $GITHUB_TOKEN
   local_dir: dist/bitbucket
   on:
     branch: master
