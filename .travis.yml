@@ -8,19 +8,19 @@ stages:
   - "Build"
 jobs:
   include:
-    - stage: "Quality gates"
+    - stage: "Quality gates Linter"
       name: "Linter"
       script: npm run lint
     - script: npm run test-headless
       name: "Unit Tests"
-    - stage: "Build"
-      script: npm run deploy-gh
-      name: "Deploy"
+    - stage: "Quality gates Unit Tests"
+    - script: npm run test-headless
+      name: "Unit Tests"
 branches:
   only:
   - master
 before_deploy:
-  - echo -e "node_modules\npackage-lock.json" > .gitignore
+  - npm run deploy-gh
 deploy:
   provider: pages
   skip_cleanup: true
