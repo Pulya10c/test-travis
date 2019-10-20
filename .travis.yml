@@ -16,13 +16,7 @@ branches:
   only:
   - master
 before_deploy:
-stages:
-  - "Deploy"
-jobs:
-  include:
-    - stage: "Deploy"
-      name: "Deploy on gh-pages"
-      script: npm run deploy-gh
+  - npm run deploy-gh
 deploy:
   provider: pages
   skip_cleanup: true
