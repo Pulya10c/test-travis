@@ -5,15 +5,11 @@ install:
   - npm install
 stages:
   - "Quality gates"
-  - "Build"
 jobs:
   include:
     - stage: "Quality gates Linter"
       name: "Linter"
       script: npm run lint
-    - script: npm run test-headless
-      name: "Unit Tests"
-    - stage: "Quality gates Unit Tests"
     - script: npm run test-headless
       name: "Unit Tests"
 branches:
@@ -25,7 +21,7 @@ deploy:
   provider: pages
   skip_cleanup: true
   keep-history: true
-  github_token: $GITHUB_TOKEN
+  github_token: GITHUB_TOKEN
   local_dir: dist/bitbucket
   on:
     branch: master
