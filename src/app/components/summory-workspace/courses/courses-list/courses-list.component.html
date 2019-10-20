@@ -1,0 +1,5 @@
+<section class="courses-list">
+	<app-control-panel></app-control-panel>
+	<app-course *ngFor="let course of courses" [course]="course" (deleteСourseId)="deleteCourse($event)"></app-course>
+	<app-load-more-courses></app-load-more-courses>
+</section>

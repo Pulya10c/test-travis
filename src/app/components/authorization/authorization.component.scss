@@ -1,0 +1,67 @@
+@import '../../../styles/variables.scss';
+
+.authorization {
+	background-color: $paleGray;
+	height: 84vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.authorization-form {
+		border-radius: 0.429rem;
+		box-shadow: 0 1px 1.714rem 0 $loginShadow;
+		background-color: $white;
+		padding: 1.714rem;
+		.authorization-header-container {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 0 0 1.271rem 0;
+		}
+		.wrong-messages {
+			margin: 0;
+			color: $red;
+		}
+		.authorization-header {
+			font-size: 1.714rem;
+			font-weight: 600;
+			line-height: 1.25;
+			letter-spacing: normal;
+			color: $colorCourses;
+			margin: 0;
+		}
+		.authorization-input-text {
+			font-size: 1rem;
+			font-weight: 600;
+			letter-spacing: 0.22px;
+			color: $coursDescriptionColor;
+			margin: 0;
+		}
+		.authorization-input {
+			width: 23rem;
+			height: 2.571rem;
+			border-radius: 3px;
+			border: solid 1px $borderInputColor;
+			background-color: $white;
+			margin: 0.571rem 0 1rem 0;
+			&.class__invalid {
+				border: solid 2px $red;
+			}
+		}
+		.authorization-footer {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-top: 0.714rem;
+		}
+		.authorization-button {
+			background-color: $sick-green;
+			color: $white;
+			font-size: 1rem;
+			line-height: 2.43;
+			letter-spacing: -0.1px;
+			margin-left: 0.429rem;
+			padding: 0 1.3rem;
+		}
+	}
+}

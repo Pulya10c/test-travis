@@ -1,0 +1,135 @@
+@import '../../../../../styles/variables.scss';
+
+.new-course {
+	background-color: $paleGray;
+	height: 84vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.new-course-form {
+		border-radius: 0.429rem;
+		box-shadow: 0 1px 1.714rem 0 $loginShadow;
+		background-color: $white;
+		padding: 1.714rem;
+		.new-course-header {
+			font-size: 1.714rem;
+			font-weight: 600;
+			line-height: 1.25;
+			letter-spacing: normal;
+			color: $colorCourses;
+			margin: 0 0 1.286rem;
+		}
+		.new-course-container-input-name {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: 1rem 0 0.571rem 0;
+			&.date,
+			&.duration {
+				max-width: 10.714rem;
+			}
+			&.authors {
+				max-width: 22rem;
+			}
+			.new-course-input-name {
+				font-size: 1rem;
+				font-weight: 600;
+				letter-spacing: 0.22px;
+				color: $coursDescriptionColor;
+				margin: 0;
+			}
+			.new-course-required {
+				font-size: 0.857rem;
+				font-weight: normal;
+				line-height: 1.5;
+				letter-spacing: 0.19px;
+				color: $required;
+				margin: 0;
+			}
+		}
+		.new-course-input-data-container {
+			display: flex;
+			align-items: center;
+			.new-course-input-date-icon {
+				color: $gray-date-icon;
+				position: absolute;
+				margin-left: 120px;
+				cursor: pointer;
+			}
+		}
+		.new-course-input {
+			width: 10.714rem;
+			max-width: 48rem;
+			height: 2.571rem;
+			border-radius: 3px;
+			border: solid 1px $borderInputColor;
+			background-color: $white;
+			font-size: 1.1rem;
+			margin: 0;
+			line-height: 1.71;
+			letter-spacing: normal;
+			color: $coursDescriptionColor;
+			&.title {
+				width: 60vw;
+			}
+			&.description {
+				width: 60vw;
+        height: 7.714rem;
+        resize: none;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+          width: 1.5625rem;
+          height: 1.5625rem;
+        }
+
+        & ::-webkit-scrollbar-button {
+          display: none;
+        }
+
+        &::-webkit-scrollbar-track {
+          width: 3.125‬rem;
+          height: 3.125‬rem;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          height: 0.75rem;
+
+          background-color: $scrollbar-thumb;
+          border: 0.5rem solid $white;
+        }
+
+        &::-webkit-scrollbar-corner {
+          display: none;
+        }
+
+			}
+			&.authors {
+				width: 22rem;
+			}
+			&.class__invalid {
+				border: solid 2px $red;
+			}
+		}
+		.new-course-footer {
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			margin-top: 1.714rem;
+		}
+		.new-course-button {
+			background-color: $sick-green;
+			color: $white;
+			font-size: 1rem;
+			line-height: 2.43;
+			letter-spacing: -0.1px;
+			margin-left: 0.429rem;
+			padding: 0 1.3rem;
+			&.cancel {
+				color: $cancelColor;
+				background-color: $cancelBgColor;
+			}
+		}
+	}
+}
+

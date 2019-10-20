@@ -1,0 +1,27 @@
+<section class="header">
+	<div class="header-wrapper">
+		<a routerLink="/courses" class="header__logo">
+			<mat-icon class="header__logo-icon" aria-hidden="false" aria-label="search icon">play_circle_outline</mat-icon>
+			<h1 class="header__logo-text">VIDEO COURSES</h1>
+		</a>
+		<div class="header__authorization">
+			<a routerLink="/authorization" class="header__authorization-log in" (click)="onClick()">
+				<mat-icon class="header__authorization-log-in-icon" aria-hidden="false" aria-label="search icon">
+					how_to_reg
+				</mat-icon>
+				<div *ngIf="!user; else showUserLogin">
+					<p>User logIn</p>
+				</div>
+				<ng-template #showUserLogin>
+					<span>{{ user.firstName }} {{ user.lastName }}</span>
+				</ng-template>
+			</a>
+			<a routerLink="/courses" class="header__authorization-log off" (click)="onLogOff()">
+				<mat-icon class="header__authorization-log-in-icon" aria-hidden="false" aria-label="search icon">
+					exit_to_app
+				</mat-icon>
+				<p>Log off</p>
+			</a>
+		</div>
+	</div>
+</section>

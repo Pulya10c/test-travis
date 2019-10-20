@@ -1,0 +1,87 @@
+@import '../../../../../styles/variables.scss';
+
+.course {
+	display: flex;
+	justify-content: space-between;
+	margin: 0.875rem 0;
+	padding: 1.715rem;
+	border-radius: 0.572rem;
+	box-shadow: 0 1px 1.715rem 0 rgba(18, 21, 35, 0.08);
+	background-color: $white;
+	font-family: $sourseSansPro;
+	font-style: normal;
+	font-stretch: normal;
+	letter-spacing: normal;
+	cursor: pointer;
+	.course__description {
+		flex: 3;
+	}
+	.course__control {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		.course__control-edit-icon {
+			font-size: 1.2rem;
+			width: 1.2rem;
+			height: 1.2rem;
+			padding-right: 0.2rem;
+		}
+	}
+
+	.course__description-header-text {
+		flex: 6;
+		margin: 0;
+		font-size: 1.715rem;
+		font-weight: 600;
+		line-height: 1.25;
+	}
+
+	.course__description-content-text {
+		text-align: justify;
+		margin: 0.572rem 0 0 0;
+		line-height: 1.71;
+		font-size: 1rem;
+		font-weight: normal;
+		color: $coursDescriptionColor;
+	}
+
+	.course__description-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.course__description-header-calendar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex: 2;
+		color: $courseDateColor;
+		&-duration,
+		&-date {
+			display: flex;
+			justify-content: flex-start;
+			align-items: center;
+			p {
+				margin-left: 0.6rem;
+			}
+		}
+	}
+	.course__control-button {
+		background-color: $dark-sky-blue;
+		font-size: 0.857rem;
+		line-height: 1.83;
+		color: $white;
+		padding: 0.143rem 0.857rem;
+		&:hover {
+			background-color: $dark-sky-blue-hover;
+			color: $white-hover;
+		}
+	}
+	.course__control-button {
+		&.delete {
+			margin-left: 0.857rem;
+		}
+	}
+}

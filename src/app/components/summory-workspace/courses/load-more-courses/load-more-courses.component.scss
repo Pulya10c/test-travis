@@ -1,0 +1,16 @@
+@import '../../../../../styles/variables.scss';
+
+
+.course__load-more {
+  max-width: 1280px;
+  background-color: $white;
+  text-align: center;
+  padding: 1.2rem 0;
+  border-radius: 0.572rem;
+.course__load-more-link {
+  font-size: 0.857rem;
+  line-height: 1.5;
+  letter-spacing: 0.19px;
+  color: $softBlue;
+}
+}

@@ -1,0 +1,62 @@
+<section class="authorization">
+	<form [formGroup]="authorizationForm" class="authorization-form" (submit)="onSubmit()">
+		<div class="authorization-header-container">
+			<div *ngIf="!isValidForm; else showErrorValidForm">
+				<h3 class="authorization-header">Login</h3>
+				<p class="wrong-messages"></p>
+			</div>
+			<ng-template class="authorization-header-container" #showErrorValidForm>
+				<h3 class="authorization-header">Login</h3>
+				<p class="wrong-messages">Wrong name or last name or e-mail or pass</p>
+			</ng-template>
+		</div>
+		<div class="authorization-first-name">
+			<p class="authorization-input-text">First name:</p>
+			<input
+				id="firstName"
+				class="authorization-input first-name"
+				type="text"
+				formControlName="firstName"
+				placeholder="Enter first name"
+				[class.class__invalid]="isControlInvalid('firstName')"
+			/>
+		</div>
+		<div class="authorization-last-name">
+			<p class="authorization-input-text">Last name:</p>
+			<input
+				id="lastName"
+				class="authorization-input last-name"
+				type="text"
+				formControlName="lastName"
+				placeholder="Enter last name"
+				[class.class__invalid]="isControlInvalid('lastName')"
+			/>
+		</div>
+		<div class="authorization-email">
+			<p class="authorization-input-text">E-mail:</p>
+			<input
+				id="email"
+				class="authorization-input email"
+				type="email"
+				formControlName="email"
+				placeholder="Enter email"
+				[class.class__invalid]="isControlInvalid('email')"
+			/>
+		</div>
+		<div class="authorization-password">
+			<p class="authorization-input-text">Password:</p>
+			<input
+				id="password"
+				class="authorization-input password"
+				type="password"
+				formControlName="password"
+				placeholder="Enter password"
+				[class.class__invalid]="isControlInvalid('password')"
+			/>
+		</div>
+		<div class="authorization-footer">
+			<a href="#" class="authorization-forgot-password">Forgot password?</a>
+			<button type="submit" mat-raised-button color="primary" class="authorization-button">Login</button>
+		</div>
+	</form>
+</section>

@@ -1,0 +1,66 @@
+@import '../../../../styles/variables.scss';
+
+.control-panel {
+	margin: auto;
+	max-width: 1280px;
+	max-height: 10.286rem;
+	justify-content: space-between;
+	height: 144px;
+	align-items: flex-start;
+	display: flex;
+}
+
+.control-panel-search {
+	margin: 1.714rem 0;
+	display: flex;
+	.control-panel-search-button {
+		background-color: $sick-green;
+		color: $white;
+		font-size: 1.286rem;
+		line-height: 2.56;
+		margin-left: 0.429rem;
+		padding: 0 1.714rem;
+		&:hover {
+			background-color: $sick-green-hover;
+			color: $white-hover;
+		}
+	}
+}
+
+.control-panel-search-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	width: 25.714rem;
+	background-color: $white;
+	.control-panel-search-icon {
+		position: absolute;
+		width: 1.5rem;
+		height: 1.5rem;
+		color: $gray;
+		margin-left: 1rem;
+		margin-right: 0.55rem;
+	}
+	.control-panel-search-input {
+		border: 1px solid $borderInputColor;
+		border-radius: 3px;
+		flex: 1;
+		height: 3.429rem;
+		padding: 0 0 0 3rem;
+	}
+}
+
+.control-panel-add {
+	background-color: $dark-sky-blue;
+	color: $white;
+	align-self: flex-end;
+	font-size: 1rem;
+	font-weight: 600;
+	font-style: normal;
+	font-stretch: normal;
+	line-height: 2.57;
+	&:hover {
+		background-color: $dark-sky-blue-hover;
+		color: $white-hover;
+	}
+}
