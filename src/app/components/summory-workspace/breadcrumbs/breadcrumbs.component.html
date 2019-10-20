@@ -1,0 +1,8 @@
+<section class="breadcrumbs">
+	<div class="breadcrumbs-name">
+		<span class="breadcrumbs-name-all" *ngFor="let name of pathNames; let idx = index">
+			{{ name }}
+			<span class="breadcrumbs-connecting-symbol" *ngIf="idx !== pathNames.length - 1">/</span>
+		</span>
+	</div>
+</section>

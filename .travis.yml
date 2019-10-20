@@ -1,0 +1,31 @@
+language: node_js
+node_js:
+  - "10"
+install:
+  - npm install
+stages:
+  - "Quality gates"
+  - "Build"
+jobs:
+  include:
+    - stage: "Quality gates"
+      name: "Linter"
+      script: npm run lint
+    - script: npm run test-headless
+      name: "Unit Tests"
+    - stage: "Build"
+      script: npm run deploy-gh
+      name: "Deploy"
+branches:
+  only:
+  - master
+before_deploy:
+  - echo -e "node_modules\npackage-lock.json" > .gitignore
+deploy:
+  provider: pages
+  skip_cleanup: true
+  keep-history: true
+  github_token: $GITHUB_TOKEN
+  local_dir: dist/bitbucket
+  on:
+    branch: master

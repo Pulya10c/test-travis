@@ -1,0 +1,95 @@
+<section class="new-course">
+	<form [formGroup]="newCourseForm" class="new-course-form" (submit)="onSubmit()">
+		<p class="new-course-header">New course</p>
+		<div class="new-course-title">
+			<div class="new-course-container-input-name">
+				<p class="new-course-input-name">Title:</p>
+				<p class="new-course-required">*required</p>
+			</div>
+			<input
+				[class.class__invalid]="isControlInvalid('title')"
+				id="title"
+				formControlName="title"
+				class="new-course-input title"
+				placeholder="Text input"
+			/>
+		</div>
+		<div class="new-course-description">
+			<div class="new-course-container-input-name">
+				<p class="new-course-input-name">Description:</p>
+				<p class="new-course-required">*required</p>
+			</div>
+			<textarea
+				[class.class__invalid]="isControlInvalid('description')"
+				id="description"
+				formControlName="description"
+				class="new-course-input description"
+        placeholder="Add description"
+			></textarea>
+		</div>
+		<div class="new-course-duration">
+			<div class="new-course-container-input-name duration">
+				<p class="new-course-input-name">Duration:</p>
+				<p class="new-course-required">*required</p>
+			</div>
+			<input
+				[class.class__invalid]="isControlInvalid('duration')"
+				id="duration"
+				formControlName="duration"
+				class="new-course-input duration"
+				placeholder="minutes"
+			/>
+		</div>
+		<div class="new-course-date">
+			<div class="new-course-container-input-name date">
+				<p class="new-course-input-name">Date:</p>
+				<p class="new-course-required">*required</p>
+			</div>
+			<div class="new-course-input-data-container">
+				<input
+					id="date"
+					[class.class__invalid]="isControlInvalid('date')"
+					class="new-course-input date"
+					formControlName="date"
+					[matDatepicker]="picker"
+					placeholder="mm/dd/yyyy"
+				/>
+				<mat-datepicker #picker></mat-datepicker>
+				<mat-icon
+					class="new-course-input-date-icon"
+					aria-hidden="false"
+					aria-label="search icon"
+					(click)="picker.open()"
+				>
+					calendar_today
+				</mat-icon>
+			</div>
+		</div>
+		<div class="new-course-authors">
+			<div class="new-course-container-input-name authors">
+				<p class="new-course-input-name">Authors:</p>
+				<p class="new-course-required">*required</p>
+			</div>
+			<input
+				[class.class__invalid]="isControlInvalid('authors')"
+				id="authors"
+				formControlName="authors"
+				class="new-course-input authors"
+				placeholder="Start typing"
+			/>
+		</div>
+		<div class="new-course-footer">
+			<button mat-raised-button class="new-course-button cancel" (click)="onCancel()">Cancel</button>
+			<button
+				type="submit"
+				mat-raised-button
+				[class.cancel]="newCourseForm.invalid"
+				[disabled]="newCourseForm.invalid"
+				color="primary"
+				class="new-course-button"
+			>
+				Save
+			</button>
+		</div>
+	</form>
+</section>

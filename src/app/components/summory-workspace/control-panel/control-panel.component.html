@@ -1,0 +1,18 @@
+<section class="control-panel">
+	<div class="control-panel-search">
+		<div class="control-panel-search-container">
+			<mat-icon class="control-panel-search-icon" aria-hidden="false" aria-label="search icon">search</mat-icon>
+			<input
+				class="control-panel-search-input"
+				type="text"
+				placeholder="Text to search"
+				[(ngModel)]="searchValue"
+				(ngModelChange)="onSearch($event)"
+			/>
+		</div>
+		<button mat-raised-button color="primary" class="control-panel-search-button" (click)="onClickSearch()">
+			Search
+		</button>
+	</div>
+	<button mat-raised-button color="primary" class="control-panel-add" (click)="onClickAddCourse()">+ Add course</button>
+</section>

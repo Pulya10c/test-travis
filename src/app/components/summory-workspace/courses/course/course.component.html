@@ -1,0 +1,46 @@
+<section class="course">
+	<div class="course__description">
+		<div class="course__description-header">
+			<h3 class="course__description-header-text">
+				{{ course.title }}
+			</h3>
+			<div class="course__description-header-calendar">
+				<div class="course__description-header-calendar-duration">
+					<mat-icon
+						class="course__description-header-calendar-duration-icon"
+						aria-hidden="false"
+						aria-label="search icon"
+					>
+						av_timer
+					</mat-icon>
+					<p>{{ course.duration | date: 'h:mm' }}</p>
+				</div>
+				<div class="course__description-header-calendar-date">
+					<mat-icon class="course__description-header-calendar-date-icon" aria-hidden="false" aria-label="search icon">
+						calendar_today
+					</mat-icon>
+					<p>{{ course.creationDate | date }}</p>
+				</div>
+			</div>
+		</div>
+		<div class="course__description-content">
+			<p class="course__description-content-text">
+				{{ course.description }}
+			</p>
+		</div>
+	</div>
+	<div class="course__control">
+		<button class="course__control-button edit" mat-raised-button color="primary" (click)="editCourse(course)">
+			<mat-icon class="course__control-edit-icon" aria-hidden="false" aria-label="search icon">
+				edit
+			</mat-icon>
+			<span>Edit</span>
+		</button>
+		<button class="course__control-button delete" mat-raised-button color="primary" (click)="deleteCourse(course.id)">
+			<mat-icon class="course__control-edit-icon" aria-hidden="false" aria-label="search icon">
+				delete
+			</mat-icon>
+			<span>Delete</span>
+		</button>
+	</div>
+</section>
