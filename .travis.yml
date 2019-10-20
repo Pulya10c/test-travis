@@ -5,7 +5,6 @@ install:
   - npm install
 stages:
   - "Quality gates"
-  - "Build"
 jobs:
   include:
     - stage: "Quality gates Linter"
